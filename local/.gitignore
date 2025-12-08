@@ -1,0 +1,17 @@
+*.log
+*.gz
+*.bz
+*.bz2
+*.tar
+*.zip
+*.rar
+*.7z
+*.swp
+*.swo
+*.swq
+*.bak
+*.BAK
+.DS_Store
+Thumbs.db
+
+/vendor
