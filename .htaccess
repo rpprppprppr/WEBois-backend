@@ -1,0 +1,16 @@
+<IfModule mod_headers.c>
+    Header always set Access-Control-Allow-Origin: "*"
+    Header always set Access-Control-Allow-Methods: "GET, POST, OPTIONS, PUT, DELETE"
+    Header always set Access-Control-Allow-Headers: "Content-Type, Authorization, X-Requested-With"
+</IfModule>
+
+
+RewriteEngine On
+
+# Исключаем папку /api из редиректа
+RewriteCond %{REQUEST_URI} !^/api/
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php [QSA,L]
+
+DirectoryIndex index.php
